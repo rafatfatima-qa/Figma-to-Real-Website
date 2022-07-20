@@ -1,0 +1,356 @@
+/* Colors */
+:root{
+    --primary: #FF6464;
+    --secondary: #00A8CC;
+    --dark: #21243D;
+    --light: #8695A4;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Heebo', sans-serif;
+}
+.wrapper{
+    width: 1152px;
+    margin: 0 auto;
+    padding: 27px 148px; /*top right bottom left*/
+}
+
+/* Header Navigation */
+.desktop-nav{
+ z-index: 200px;
+}
+
+.menu-items{
+    display: flex;
+    justify-content: right;
+    padding: 27px 148px;
+    list-style: none;
+}
+.desktop-nav .menu-items li{
+    margin: 0 17px ;
+}
+
+.desktop-nav .menu-items li a{
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.desktop-nav .menu-items li a.btn{
+    color: var(--light);
+    
+}
+
+/* Hero Section */
+.hero-container{
+    height: 70vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.hero-container .left .left-heading{   
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 60px;
+    color: var(--dark);
+}
+
+/* Download Resume btn */
+.hero-container .left .btn{
+    background-color: var(--primary);
+    color: white;
+    padding: 9px 20px; /* top/bottom    right/left */
+    text-decoration: none;    
+}
+
+.hero-container .left p{
+    
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 38px;
+    padding-right: 110px;
+}
+
+.hero-container .right img{    
+    box-shadow: -5px 10px #EDF7FA;;
+    border-radius: 115px;       
+}
+
+.desktop-nav{
+    animation: fadeDown 1000ms forwards;
+    opacity: 0;
+}
+@keyframes fadeDown{
+
+from{
+    opacity: 0;
+    transform: translateY(-20px);
+}
+to{
+    opacity: 1;
+    transform: translateY(-0);
+}
+}
+
+.hero-container .left .left-heading,p {
+    animation: fadeIn 800ms forwards;
+    opacity: 0;
+    animation-delay: 400ms;
+}
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+.hero-container .left .btn {
+    animation: fadeToRight 800ms forwards cubic-bezier(0.22, 0.32, 0, 1.54);
+    opacity: 0;
+    animation-delay: 800ms;
+}
+@keyframes fadeToRight {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-container .right img {
+    animation: fadeToLeft 1000ms forwards;
+    opacity: 0;
+    animation-delay: 900ms;
+}
+@keyframes fadeToLeft {
+    from{
+        
+        transform: translateX(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Recent Posts Section */
+.recent-posts-section{
+    background-image: url(images/light-blue-bg.svg);   
+    width: auto;
+    height: 396px;
+    padding-left: 0px;
+}
+
+.recent-post-header{
+    display: flex;
+    justify-content: space-between;
+}
+.section-heading{
+    
+    font-family: 'Heebo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 60px;
+    color: #21243D;   
+}
+.view-all-link{
+    
+    font-family: 'Heebo';
+    font-style: normal;
+    font-size: 16px;
+    text-align: right;
+    color: var(--secondary);  
+    line-height: 60px; 
+}
+
+.recent-posts-details{
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+.left-recent-post, .right-recent-post{
+    background-color: white;
+    border-radius: 4px;
+    width: 418px;
+    height: 295px;
+    left: 148px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
+    border-radius: 4px;
+}
+
+.recent-post-date{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Featured Section */
+
+.featured-work1, .featured-work2, .featured-work3{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding-top: 46px;    
+}
+
+.btn-featured-year{
+    color: white;
+    background: #142850;
+    border-radius: 16px;
+    border:none;
+    margin-right: 40px;
+}
+.dashboard{
+    color: var(--light)
+}
+.featured-description{
+    padding-left: 15px; 
+}
+.featured-description p{
+    width: 594px;
+}
+.footer-section{ 
+  padding-top: 115px;  
+}
+
+.footnote{
+    text-align: center;
+    padding-top: 20px;  
+}
+
+.footer-images{
+    display:flex;
+    justify-content: center;
+}
+
+.footer-images img{
+    padding-right: 10px;
+}
+
+.menu-icon{
+    display:none;
+    text-align: end;
+}
+
+/* Media Queries */
+
+@media (max-width: 650px) {
+    .wrapper{
+      padding: 0;
+      width: auto;
+    }
+  
+    .hero-container{
+        height: 100vh;
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .hero-container .left p{
+    
+        font-family: 'Heebo';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        padding-bottom: 30px;
+        padding-right: 0px;
+    }
+
+    .left-heading btn{
+        padding-bottom: 58px;
+    }
+
+    .recent-post-header{
+        justify-content: center;
+    }
+
+    .view-all-link{
+        display: none;
+    }
+
+    .recent-posts-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .recent-post-desc-left,
+    .recent-post-desc-right,
+    .recent-post-heading-left,
+    .recent-post-heading-right,
+    .recent-post-date {
+        text-align: left;
+    }
+
+    .featured-work2, .featured-work3{
+        display: none;
+    }
+
+    .featured-work1{
+        display: flex;
+        flex-direction: column;
+        padding-top: 0px;
+    }
+
+    .featured-works .section-heading{
+        justify-content: center;
+        padding-top: 260px;
+       
+    }
+    .featured-work1 img{
+        height: 230px;
+        left:0%;
+       
+    }
+
+    .featured-description{
+        text-align: left;
+        padding-top:17px;
+    }
+
+    .desktop-nav .menu-items {
+      display: none;
+    }
+  
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+      padding: 8px 10px;
+    } 
+  
+   
+   .hero-container .left,
+   .hero-container .right,
+   .recent-posts-section,
+   .featured-works {
+      text-align: center;
+    }
+  
+    .hero-container .left p {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+  
+    .hero-container .left .left-heading {
+      font-size: 30px;
+    }
+  
+    a.btn {
+      font-size: 14px;
+    } 
+}
